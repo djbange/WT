@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Calculator</title>
+</head>
+<body ng-controller="calculatorController">
+    <label for="value">Enter value here: </label>
+    <input type="number" name="value" ng-model="value">
+    <br><br>
+    <button ng-click="add()">Add</button>
+    <button ng-click="subtract()">Subtract</button>
+    <button ng-click="multiply()">Multiply</button>
+    <button ng-click="divide()">Divide</button>
+    <br><br>
+    <button ng-click="sin()">sin</button>
+    <button ng-click="cos()">cos</button>
+    <button ng-click="tan()">tan</button>
+    <button ng-click="tan()">square root</button>    
+    <br><br>     
+    <span>Result: {{result}}</span>
+
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('calculatorController', function($scope){
+            $scope.value = 0;
+            $scope.result = 0;
+
+            $scope.add = function(){
+                $scope.result = $scope.result + $scope.value;
+            }
+
+            $scope.subtract = function(){
+                $scope.result = $scope.result - $scope.value;
+            }
+
+            $scope.multiply = function(){
+                $scope.result = $scope.result * $scope.value;
+            }
+
+            $scope.divide = function(){
+                $scope.result = $scope.result / $scope.value;
+            }
+
+            $scope.sin = function(){
+                $scope.result = Math.sin($scope.value);
+            }
+
+            $scope.cos = function(){
+                $scope.result = Math.cos($scope.value);
+            }
+
+            $scope.tan = function(){
+                $scope.result = Math.tan($scope.value);
+            }
+
+            $scope.tan = function(){
+                $scope.result = Math.squareroot($scope.value);
+            }
+        })
+
+    </script>
+</body>
+</html>

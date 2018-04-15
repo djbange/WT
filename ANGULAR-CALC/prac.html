@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title> Calculator </title>
+</head>
+<body ng-controller = "calculatorController">
+	<label for = "value"> Enter value here </label>
+	<input type = "number" name = "value" ng-model = "value">
+	<br><br>
+
+	<button ng-click = "add()"> ADD </button>
+	<button ng-click = "subtract()"> SUB </button>
+	<button ng-click = "multiply()"> MULT </button>
+	<button ng-click = "divide()"> DIV </button>
+
+	<br><br>
+	<button ng-click = "sin()">SIN</button>
+	<button ng-click = "cos()">COS</button>
+	<button ng-click = "tan()">TAN</button>
+
+	<br><br>
+	<span> Result: {{result}} </span>
+
+	<script src="angular.min.js"></script>
+	<script>
+		var app = angular.module('myapp',[]);
+		app.controller('calculatorController',function($scope))
+		{
+			$scope.value = 0;
+			$scope.result = 0;
+
+			$scope.add = function(){
+				$scope.result = $scope.result + $scope.value;
+			}
+
+			$scope.subtract = function(){
+				$scope.result = $scope.result + $scope.value;
+			}
+
+			$scope.multiply = function(){
+				$scope.result = $scope.result + $scope.value;
+			}
+
+			$scope.divide = function(){
+				$scope.result = $scope.result + $scope.value;
+			}
+
+			$scope.sin = function(){
+				$scope.result = Math.sin($scope.value);
+			}
+
+			$scope.cos = function(){
+				$scope.result = Math.cos($scope.value);
+			}
+
+			$scope.tan = function(){
+				$scope.result = Math.tan($scope.value);
+			}
+		}
+	</script>
+</body>
+</html>
